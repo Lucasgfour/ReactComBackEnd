@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="css/table.css">
+        <link rel="stylesheet" href="css/style.css">
+        <title>Times de Futebol - LP III</title>
+    </head>
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                  <div class="card">
+                    <div class="card-image">
+                      <img src="css/card.jpg">
+                      <span class="card-title">Times de Futebol - LP III</span>
+                      <a class="btn-floating halfway-fab waves-effect waves-light red" id="btnOpenCadastro"><i class="material-icons">add</i></a>
+                    </div>
+                    <div class="card-content">
+                        <table class="table table-sm table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Clube</th>
+                                    <th>Série</th>
+                                    <th>Estádio</th>
+                                    <th>Técnico</th>
+                                    <th>UF</th>
+                                    <th>Ferramentas</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabDados" class="center-align">
+    
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <ul id='dropEdit' class='dropdown-content'>
+            <li><a href="#!"><i class="material-icons">edit</i></a></li>
+            <li><a href="#!"><i class="material-icons">add</i></a></li>
+            <li class="divider" tabindex="-1"></li>
+        </ul>
+
+        <!-- Modal Cadastro/Edição -->
+        <div id="modalDescricao" class="modal">
+            <div class="modal-content">
+                <div class="row">
+                    <div class="col s12">
+                        <h6>Cadastro / Edição de Times</h6>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input placeholder="Nome do clube" id="txtNome" type="text" class="validate">
+                        <label>Nome</label>
+                    </div>
+                    <div class="input-field col s6 m4">
+                        <input placeholder="Série do time" id="txtSerie" type="text" class="validate">
+                        <label>Série</label>
+                    </div>
+                    <div class="input-field col s6 m2">
+                        <input placeholder="Ex.: MG" id="txtEstado" maxlength="2" type="text" class="validate">
+                        <label>Estado(UF)</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input placeholder="Estádio" id="txtEstadio" type="text" class="validate">
+                        <label>Estádio</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input placeholder="Técnico" id="txtTecnico" type="text" class="validate">
+                        <label>Técnico</label>
+                    </div>  
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-red darken-4 btn-flat" onclick='$("#modalDescricao").modal("close");'>Cancelar</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat" onclick="salvar();">Salvar</a>
+            </div>
+        </div>
+
+        <div id="modalExclusao" class="modal">
+            <div class="modal-content">
+                <h6>Tem certeza que deseja excluir ?</h6>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green darken-4 btn-flat" onclick='$("#modalExclusao").modal("close");'>Não</a>
+                <a href="#!" class="modal-close waves-effect waves-red btn-flat" onclick="excluir();">Sim</a>
+            </div>
+        </div>
+                
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
